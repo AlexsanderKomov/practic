@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Contact from '@/components/contact';
 
 import geo from '@/public/geo-header.svg';
 import clockHeader from '@/public/clock-header.svg';
@@ -10,60 +9,40 @@ import phone from '@/public/phone-header.svg';
 
 const HeaderTopLinks = () => {
   return (
-    <ul className="flex items-center w-full justify-between list-nav">
-      <li className="flex items-center justify-center gap-x-2">
-        <Image src={geo} width={20} height={20} alt="Геолокация" />
-        Мосвка
-      </li>
-      <li className="flex items-center justify-center gap-x-2">
-        <Image src={clockHeader} width={20} height={20} alt="Часы" />
-        Пн-Пт с 8:00-18:00
-      </li>
-      <li>
-        <Link
-          className="flex items-center justify-center gap-x-2"
+    <div className="text-white bg-[#555d68] text-xl w-full">
+      <div className="max-w-[1280px] mx-auto flex items-center justify-between py-[10px] lg:px-[100px] md:px-[70px]">
+        <Contact src={geo} content="Москва" alt="Геолокация" />
+        <Contact
+          src={clockHeader}
+          content="Пн-Пт с 8:00-18:00"
+          alt="Время роботы"
+        />
+        <Contact
+          src={email}
           href="mailto:alexsanderkomov@yandex.ru"
-          target="_blank"
-        >
-          <Image src={email} width={21} height={15.17} alt="Наша почта" />
-          promair@mail.ru
-        </Link>
-      </li>
-      <li>
-        <ul className="flex gap-x-[30px]">
-          <li>
-            <Link href="https://t.me/alexsandrkomov" target="_blank">
-              <Image src={telegram} width={20} height={20} alt="Телеграм" />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://wa.me/79601188544" target="_blank">
-              <Image src={whatsapp} width={20} height={20} alt="Wats Apip" />
-            </Link>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <Link
-          className="flex items-center justify-center gap-x-2 font-bold"
+          alt="Наша почта"
+          content="promair@mail.ru"
+        />
+        <div className="flex lg:gap-x-[30px] md:gap-x-[15px]">
+          <Contact
+            src={telegram}
+            alt="Телеграм"
+            href="https://t.me/alexsandrkomov"
+          />
+          <Contact
+            src={whatsapp}
+            alt="Wats App"
+            href="https://wa.me/79601188544"
+          />
+        </div>
+        <Contact
+          src={phone}
           href="tel:79601188544"
-          target="_blank"
-        >
-          <Image src={phone} width={21} height={21} alt="Телефон" />
-          +7 (960) 118-85-44
-        </Link>
-      </li>
-      <style jsx>
-        {`
-          .list-nav {
-            padding: 15px 100px;
-            background-color: #555d68;
-            color: #fff;
-            font-size: 20px;
-          }
-        `}
-      </style>
-    </ul>
+          content="+7 (960) 118-85-44"
+          alt="Наш телефон"
+        />
+      </div>
+    </div>
   );
 };
 

@@ -15,3 +15,7 @@ export const FormSchema = z.object({
     })
     .regex(phoneRegex, 'Введите корректный номер'),
 });
+
+export const SearchSchema = z.object({
+  value: z.string(),
+});

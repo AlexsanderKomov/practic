@@ -7,6 +7,8 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    --color-active: #6ab8ee;
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
@@ -76,9 +78,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 15px;
     margin: 0 auto;
-    width: 1310px;
+    width: 100vw;
     background-color: #edf1f4;
   }
 }

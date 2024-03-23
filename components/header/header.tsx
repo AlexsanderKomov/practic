@@ -1,16 +1,17 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import HeaderTopLinks from './header-top-link';
-import HeaderBoard from './header-doard';
+import { useWindowSize } from '@uidotdev/usehooks';
+import HeaderContent from './header-content';
+import HeaderMobile from './header-mobile';
 
 const Header = () => {
-  const pathname = usePathname();
+  const { width } = useWindowSize();
+
+  if (width === null) return;
 
   return (
     <header className="w-full flex flex-col">
-      {pathname === '/' && <HeaderTopLinks />}
-      <HeaderBoard />
+      {width >= 776 ? <HeaderContent /> : <HeaderMobile />}
     </header>
   );
 };
